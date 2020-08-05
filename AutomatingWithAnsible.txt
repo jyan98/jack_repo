@@ -3,7 +3,7 @@ Ansible -
 Ansible Fundamentals
 Basics of working with Ansible
 Configuration Management
-
+this is a test 
 ------------------------------------------------------------
 informit.com
 sander van gugt
