@@ -1,0 +1,76 @@
+Ansible -
+
+Ansible Fundamentals
+Basics of working with Ansible
+Configuration Management
+
+------------------------------------------------------------
+informit.com
+sander van gugt
+
+Module 1  Setup the Ansible-based environment
+
+Install Ansible software
+- Only the control node needs Ansible
+- CentOS and like need EPEL repository
+- Managed hosts need Python and SSH
+
+Create a non-root user and perform all tasks as this user
+Set up SSH for communications
+-ssh-keygen
+-ssh-copy-id user@remotehost
+Configure sudo
+user ALL=(ALL) NOPASSWD:ALL
+
+
+/etc/hosts
+192.168.4.80 ansiblecontrol.exmple.com ansiblecontrol
+192.168.4.81 ansible1.exmple.com ansible1
+192.168.4.82 ansible2.exmple.com ansible2
+
+yum search ansible; yum install ansible
+yum search epel; yum install epel-release
+
+useradd ansible
+passwd ansible
+su - ansible
+ssh-keygen
+
+ssh root@ansible1
+
+ansible.cfg - 
+
+ansible all --list-hosts
+
+192.168.4.83 ubuntu.example.com ubuntu 
+
+cd base
+
+ansible.cfg
+
+[defaults]
+remote_user = ansible
+host_key_checking = false
+inventory = inventory
+
+[privilege_esacalation]
+become = True
+become_method = sudo
+become_user = root
+
+Vagrant - manages virtualization software such as KVM, VIrtualBox, and VMware through providers.
+
+vagrantup.com 
+vagrant
+
+
+Red Hat Ansible Tower
+-----------------------
+- Role Based Access Control
+- PUsh-Button Deployment
+- Centralized Logging and Audit
+- REST API
+
+
+
+
